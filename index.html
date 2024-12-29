@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js"></script>
+
+    <title>Contact form | Frontend Mentor</title>
+  </head>
+  <body>
+
+    <div class="message-sent"></div>
+
+    <main class="container">
+      <form id="form" class="form-container" novalidate>
+        <h1 class="form-title">Contact Us</h1>
+
+        <div class="form-group-name">
+          <div class="form-group">
+            <label for="first-name" class="label"> First Name <span aria-hidden="true">*</span> </label>
+            <input type="text"
+              id="first-name"
+              name="first-name"
+              autocomplete="given-name"
+              aria-invalid="false"
+              aria-describedby="first-name-error"
+              required
+            />
+            <span id="first-name-error" class="error-message" hidden></span>
+          </div>
+
+          <div class="form-group">
+            <label for="last-name" class="label"> Last Name <span aria-hidden="true">*</span> </label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              autocomplete="family-name"
+              aria-invalid="false"
+              aria-describedby="last-name-error"
+              required
+            />
+            <span id="last-name-error" class="error-message" hidden></span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="label"> Email Address <span aria-hidden="true">*</span> </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+            autocomplete="email"
+            aria-invalid="false"
+            aria-describedby="email-error  email-required-error"
+            required
+          />
+          <span id="email-error" class="error-message email-error" hidden ></span
+          >
+          <span
+            id="email-required-error"
+            class="error-message email-required-error"
+            hidden
+            ></span
+          >
+        </div>
+
+        <fieldset
+          id="query-type-fieldset"
+          class="query-type-fieldset"
+          role="radiogroup"
+          aria-invalid="false"
+          aria-describedby="query-type-error"
+          aria-required="true"
+          required
+        >
+          <legend class="legend">Query Type <span aria-hidden="true">*</span></legend>
+          <div class="fieldset-form-group">
+            <label for="general-enquiry" class="label">
+              <input
+                type="radio"
+                id="general-enquiry"
+                class="radio-input"
+                name="query-type"
+                value="general-enquiry"
+              />
+              <span>General Enquiry</span>
+            </label>
+
+            <label for="support-request" class="label">
+              <input
+                type="radio"
+                id="support-request"
+                class="radio-input"
+                name="query-type"
+                value="support-request"
+              />
+              <span>Support Request</span>
+            </label>
+          </div>
+          <span id="query-type-fieldset-error" class="error-message" hidden></span
+          >
+        </fieldset>
+
+        <div class="form-group">
+          <label for="message" class="label"> Message <span aria-hidden="true">*</span> </label>
+          <textarea
+            id="message"
+            class="message-input"
+            name="message"
+            aria-invalid="false"
+            aria-describedby="message-error"
+            required
+          ></textarea>
+          <span id="message-error" class="error-message" hidden ></span
+          >
+        </div>
+
+        <label for="consent" class="label consent-label">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            aria-invalid="false"
+            aria-describedby="consent-error"
+            required
+          />
+          <span>I consent to being contacted by the team <span aria-hidden="true">*</span></span>
+        </label>
+        <span id="consent-error" class="error-message" hidden ></span>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </main>
+
+<template id="message-success-template">
+    <p class="message-sent-title"><span><img src="./assets/images/icon-success-check.svg" alt=""></span> Message Sent!</p>
+    <p class="message-sent-text">Thanks for completing the form. We'll be in touch soon!</p>
+</template>
+
+    <!-- Contact Us
+
+  First Name
+  This field is required
+
+  Last Name
+  This field is required
+
+  Email Address
+  Please enter a valid email address
+  This field is required
+
+  Query Type
+  General Enquiry
+  Support Request
+  Please select a query type
+
+  Message
+  This field is required
+
+  I consent to being contacted by the team
+  To submit this form, please consent to being contacted
+
+  Submit
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+  <script src="main.js"></script>
+</html>
